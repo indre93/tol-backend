@@ -1,4 +1,4 @@
-class Api:V1::DiscussionsController < ApplicationController
+class DiscussionsController < ApplicationController
 
   def index
     @discussions = Discussion.all
