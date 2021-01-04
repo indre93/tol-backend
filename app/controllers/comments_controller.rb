@@ -11,13 +11,13 @@ class CommentsController < ApplicationController
     if @comment.save
       render json: @comment
     else
-      render jason: { errors: @comment.errors }
+      render json: { errors: @comment.errors }
     end
   end
 
   def show
     @comment = @discussion.comments.find_by(id: params[:id])
-    render jason: @comment
+    render json: @comment
   end
 
   def destroy

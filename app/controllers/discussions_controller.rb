@@ -10,13 +10,13 @@ class DiscussionsController < ApplicationController
     if @discussion.save
       render json: @discussion
     else
-      render jason: { errors: @discussion.errors }
+      render json: { errors: @discussion.errors }
     end
   end
 
   def show
     @discussion = Discussion.find(params[:id])
-    render jason: @discussion
+    render json: @discussion
   end
 
   def destroy
