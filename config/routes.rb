@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :comments
-      resources :discussions
+      resources :discussions do
+        resources :comments
+      end
     end
   end
 
