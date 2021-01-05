@@ -27,7 +27,7 @@ class Api::V1::DiscussionsController < ApplicationController
   private
 
   def discussion_params
-    params.require(discussion).permit(:topic)
+    params.require(:discussion).permit(:topic)
   end
 
 end
