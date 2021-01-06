@@ -1,4 +1,4 @@
 class DiscussionSerializer < ActiveModel::Serializer
-  attributes :id, :topic, :created_at
+  attributes :id, :topic
   has_many :comments
 end
