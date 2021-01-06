@@ -1,4 +1,4 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id, :discussion_id, :username, :content
+  attributes :id, :username, :content, :created_at
   belongs_to :discussion
 end
