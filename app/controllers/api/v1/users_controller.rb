@@ -1,3 +1,6 @@
+class Api::V1::UsersController < ApplicationController
+  before_action :set_discussion
+
   def index
     @users = @discussion.users
     render json: @users
@@ -16,4 +19,15 @@
       @user = @discussion.users.find_by(id: params[:id])
       render json: @user
    end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :discussion_id)
+  end
+
+  def set_discussion
+    @discussion = Discussion.find(params[:discussion_id])
+  end
+
 end
