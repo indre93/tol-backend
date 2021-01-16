@@ -1,13 +1,13 @@
 class Api::V1::CommentsController < ApplicationController
-  before_action :set_discussion
+  before_action :set_user
 
   def index
-    @comments = @discussion.comments
+    @comments = @user.comments
     render json: @comments
   end
 
   def create
-    @comment = @discussion.comments.new(comment_params)
+    @comment = @user.comments.new(comment_params)
     if @comment.save
       render json: @discussion
     else
@@ -21,8 +21,8 @@ class Api::V1::CommentsController < ApplicationController
     params.require(:comment).permit(:content, :user_id, :discussion_id)
   end
 
-  def set_discussion
-    @discussion = Discussion.find(params[:discussion_id])
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
 end
