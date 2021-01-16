@@ -19,11 +19,6 @@ class Api::V1::DiscussionsController < ApplicationController
     render json: @discussion
   end
 
-  def destroy
-    @discussion = Discussion.find(params[:id])
-    @discussion.destroy
-  end
-
   private
 
   def discussion_params
